@@ -54,6 +54,7 @@ public class DatePickerFragment extends DialogFragment
         mApp.currDate = new GregorianCalendar(year, month, day);
 
         //Calculate the necessary dates to later update
+        month++;
         tzolkinConverter.tzolkinObject tempTzolkin =  mApp.globalTzolkinConverter.onCalculateTzolkin(year, month, day, mApp);
         longCountConverter.longObject tempLong = mApp.globalLongCountConverter.onCalculateLong(year, month, day, mApp);
         haabConverter.haabObject tempHaab = mApp.globalHaabConverter.onCalculateHaab(year, month, day, mApp);

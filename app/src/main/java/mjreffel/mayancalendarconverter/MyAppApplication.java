@@ -6,9 +6,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.Date;
+import org.joda.time.DateTime;
+import org.joda.time.Interval;
 import java.util.GregorianCalendar;
 
 /**
@@ -154,43 +153,19 @@ public class MyAppApplication extends Application {
             R.drawable.haab_wayeb
     };
 
+    //Setup Months array for use in the getNumDay function
+    private int [] months =  {31,28,31,30,31,30,31,31,30,31,30,31};
+
+
     public int getNumDay(int givenYear, int givenMonth,int givenDay, int checkYear, int checkMonth,int checkDay){
-        //get the difference in the years
-        int diffYear = givenYear - checkYear;
-        //get the difference in the days
-        int diffDay = (givenDay - checkDay)*-1;
 
-        //set up the months
-        int [] months =  {31,28,31,30,31,30,31,31,30,31,30,31};
-
-        //checks if the count needs to be reset for the year and that the loop for the
-        // over the same month is made
-        boolean moreThenYear = false;
-        if(diffYear >0)moreThenYear = true;
-        //Sets the total count and the array start position
-        int monthTotal = 0;
-        int monthCount = (checkMonth-1);
-        while(monthCount != (givenMonth) || moreThenYear){
-            monthTotal += months[monthCount];
-            monthCount++;
-            if(monthCount == 12){
-                moreThenYear = false;
-                monthCount = 0;
-            }
-        }
-        //Calculates the leap days
-        double leapDays = Math.ceil((double)diffYear/4);
-        Log.d("leap diff", Double.toString(leapDays));
-        //Check make the year difference is one less for calculate if year is more then
-        //  0
-        if(diffYear-1>0)diffYear -= 1;
-        //Calculate the total number of days
-        int totalDay = (diffYear*365)+(monthTotal-diffDay)+(int)leapDays;
-        Log.d("year diff", Integer.toString(diffYear));
-        Log.d("month total", Integer.toString(monthTotal));
-        Log.d("day diff", Integer.toString(diffDay));
-        Log.d("Total days", Integer.toString(totalDay));
-        return totalDay;
+        //Do it the Gregorian way and just add in leap years
+        DateTime startTime = new DateTime(checkYear, checkMonth, checkDay,0,0);
+        DateTime endTime = new DateTime(givenYear, givenMonth, givenDay,0,0);
+        Interval differenceTime = new Interval(startTime, endTime);
+        long calcTotalMili = differenceTime.toDurationMillis();
+        int calcTotalDays = (int) (calcTotalMili / (1000*60*60*24));
+        return calcTotalDays;
     }
 
 }

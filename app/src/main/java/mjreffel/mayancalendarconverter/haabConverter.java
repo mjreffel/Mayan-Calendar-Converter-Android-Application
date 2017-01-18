@@ -33,7 +33,7 @@ public class haabConverter {
         Log.d("Inner Circle Num Haab", Integer.toString((whatInnerNum)));
         int whatOuterNum = (calcTotal / 20);
         Log.d("Outer Circle Num Haab", Integer.toString((whatOuterNum)));
-        returnObject.innerCircleString = mApp.innerCircleHaab[whatInnerNum];
+        returnObject.innerCircleString = mApp.innterCircles[whatInnerNum];
         returnObject.outerCircleString = mApp.outerCircleHaab[whatOuterNum];
         returnObject.imageReference = mApp.imagesHaab[whatOuterNum];
 

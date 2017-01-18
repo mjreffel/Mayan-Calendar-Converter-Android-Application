@@ -34,8 +34,8 @@ public class haabConverter {
         int whatOuterNum = (calcTotal % 20);
         Log.d("Outer Circle Num", Integer.toString((whatOuterNum)));
         returnObject.innerCircleString = mApp.innterCircles[whatInnerNum];
-        returnObject.outerCircleString = mApp.outerCircleTzolkin[whatOuterNum];
-        returnObject.imageReference = mApp.imagesTzolkin[whatOuterNum];
+        returnObject.outerCircleString = mApp.outerCircleHaab[whatOuterNum];
+        returnObject.imageReference = mApp.imagesHaab[whatOuterNum];
 
         //Output the desired date to the results text box
         return returnObject;

@@ -2,15 +2,19 @@ package mjreffel.mayancalendarconverter;
 
 import android.app.Application;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.Date;
+
 /**
  * Created by markreffel on 1/17/17.
  */
 public class MyAppApplication extends Application {
+
 
     //Global class references so we dont keep recreating them
     public tzolkinConverter globalTzolkinConverter = new tzolkinConverter();
@@ -19,11 +23,19 @@ public class MyAppApplication extends Application {
 
 
     //Global update fields that we need to change once calculations are done
-    TextView tzolkinText;
-    TextView longText;
-    TextView haabText;
-    ImageView tzolkinImage;
-    ImageView haabImage;
+    public TextView tzolkinText;
+    public TextView longText;
+    public TextView haabText;
+    public ImageView tzolkinImage;
+    public TextView longBaktun;
+    public TextView longKatun;
+    public TextView longTun;
+    public TextView longUinal;
+    public TextView longKin;
+    public ImageView haabImage;
+    public Button dateButton;
+    public Date currDate;
+
 
 
 
@@ -146,19 +158,7 @@ public class MyAppApplication extends Application {
         int diffDay = (givenDay - checkDay)*-1;
 
         //set up the months
-        int [] months =  new int[12];
-        months[0] = 31;
-        months[1] = 28;
-        months[2] = 31;
-        months[3] = 30;
-        months[4] = 31;
-        months[5] = 30;
-        months[6] = 31;
-        months[7] = 31;
-        months[8] = 30;
-        months[9] = 31;
-        months[10] = 30;
-        months[11] = 31;
+        int [] months =  {31,28,31,30,31,30,31,31,30,31,30,31};
 
         //checks if the count needs to be reset for the year and that the loop for the
         // over the same month is made

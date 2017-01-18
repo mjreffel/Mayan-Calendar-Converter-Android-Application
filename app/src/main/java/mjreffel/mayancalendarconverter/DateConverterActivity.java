@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.app.DialogFragment;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,10 +25,17 @@ public class DateConverterActivity extends AppCompatActivity {
 
         //Update the global variables with the correct references from inside the activity
         mApp.tzolkinText = (TextView) findViewById(R.id.tzolkinText);
-        //mApp.longText = (TextView) findViewById(R.id.longText);
+        mApp.longText = (TextView) findViewById(R.id.longText);
         mApp.haabText = (TextView) findViewById(R.id.haabText);
         mApp.tzolkinImage = (ImageView) findViewById(R.id.tzolkinImage);
+        mApp.longBaktun = (TextView) findViewById(R.id.editBaktun);
+        mApp.longKatun = (TextView) findViewById(R.id.editKatun);
+        mApp.longTun = (TextView) findViewById(R.id.editTun);
+        mApp.longUinal = (TextView) findViewById(R.id.editUinal);
+        mApp.longKin = (TextView) findViewById(R.id.editKin);
+
         mApp.haabImage = (ImageView) findViewById(R.id.haabImage);
+        mApp.dateButton = (Button) findViewById(R.id.pickDateButton);
 
     }
 

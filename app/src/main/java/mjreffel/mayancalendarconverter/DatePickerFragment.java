@@ -22,13 +22,23 @@ import java.util.Calendar;
 public class DatePickerFragment extends DialogFragment
         implements DatePickerDialog.OnDateSetListener {
 
+
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        // Use the current date as the default date in the picker
-        final Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        int day = c.get(Calendar.DAY_OF_MONTH);
+        int year, month, day;
+        //if(mApp.currDate == null) {
+            // Use the current date as the default date in the picker
+            final Calendar c = Calendar.getInstance();
+            year = c.get(Calendar.YEAR);
+            month = c.get(Calendar.MONTH);
+            day = c.get(Calendar.DAY_OF_MONTH);
+        /*} else {
+            //Use the global current date instead for the date loaded into the calendar
+            year = mApp.currDate.getYear();
+            month = mApp.currDate.getMonth();
+            day = mApp.currDate.getDay();
+        }*/
 
         // Create a new instance of DatePickerDialog and return it
         return new DatePickerDialog(getActivity(), this, year, month, day);
@@ -40,15 +50,26 @@ public class DatePickerFragment extends DialogFragment
 
         //Calculate the necessary dates to later update
         tzolkinConverter.tzolkinObject tempTzolkin =  mApp.globalTzolkinConverter.onCalculateTzolkin(year, month, day, mApp);
-        //longCountConverter.longObject tempLong = mApp.globalLongCountConverter.onCalculateLong(year, month, day, mApp);
+        longCountConverter.longObject tempLong = mApp.globalLongCountConverter.onCalculateLong(year, month, day, mApp);
         haabConverter.haabObject tempHaab = mApp.globalHaabConverter.onCalculateHaab(year, month, day, mApp);
 
         //Update the fields in the activity to reflect the above calculations
         mApp.tzolkinText.setText(tempTzolkin.innerCircleString + tempTzolkin.outerCircleString);
-        //mApp.longText.setText(tempLong.innerCircleString + tempLong.outerCircleString);
+        mApp.longText.setText(tempLong.baktun + "." + tempLong.katun + "." + tempLong.tun + "." + tempLong.uinal + "." + tempLong.kin);
         mApp.haabText.setText(tempHaab.innerCircleString + tempHaab.outerCircleString);
         mApp.tzolkinImage.setBackgroundResource(tempTzolkin.imageReference);
+
+        //Setup the long detail section
+        mApp.longBaktun.setText(""+tempLong.baktun);
+        mApp.longKatun.setText(""+tempLong.katun);
+        mApp.longTun.setText(""+tempLong.tun);
+        mApp.longUinal.setText(""+tempLong.uinal);
+        mApp.longKin.setText(""+tempLong.kin);
+
+
         mApp.haabImage.setBackgroundResource(tempHaab.imageReference);
+
+        mApp.dateButton.setText((1+month) + "/" + day + "/" + year);
 
 
     }

@@ -30,10 +30,10 @@ public class haabConverter {
 
         //Perform the modulo needed based on the base day and how many days have passed
         int whatInnerNum = (calcTotal % 20);
-        Log.d("Inner Circle Num", Integer.toString((whatInnerNum)));
+        Log.d("Inner Circle Num Haab", Integer.toString((whatInnerNum)));
         int whatOuterNum = (calcTotal % 20);
-        Log.d("Outer Circle Num", Integer.toString((whatOuterNum)));
-        returnObject.innerCircleString = mApp.innterCircles[whatInnerNum];
+        Log.d("Outer Circle Num Haab", Integer.toString((whatOuterNum)));
+        returnObject.innerCircleString = mApp.innerCircleHaab[whatInnerNum];
         returnObject.outerCircleString = mApp.outerCircleHaab[whatOuterNum];
         returnObject.imageReference = mApp.imagesHaab[whatOuterNum];
 

@@ -9,6 +9,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Created by markreffel on 1/17/17.
@@ -34,7 +35,7 @@ public class MyAppApplication extends Application {
     public TextView longKin;
     public ImageView haabImage;
     public Button dateButton;
-    public Date currDate;
+    public GregorianCalendar currDate;
 
 
 

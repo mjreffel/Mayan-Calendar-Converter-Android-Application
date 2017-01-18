@@ -44,6 +44,7 @@ public class MyAppApplication extends Application {
 
     //Global arrays so we only have one instance of them and dont waste space
     public static final String [] innterCircles = new String[] {
+            "0",
             "1",
             "2",
             "3",
@@ -86,6 +87,7 @@ public class MyAppApplication extends Application {
             "Kawak",
             "Ajaw"
     };
+
     public static final String [] outerCircleHaab = new String[] {
             "Pop'",
             "Wo'",

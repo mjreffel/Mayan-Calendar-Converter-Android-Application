@@ -2,8 +2,6 @@ package mjreffel.mayancalendarconverter;
 
 import android.util.Log;
 
-import java.util.GregorianCalendar;
-
 /**
  * Created by markreffel on 1/17/17.
  */
@@ -33,7 +31,7 @@ public class haabConverter {
         Log.d("Inner Circle Num Haab", Integer.toString((whatInnerNum)));
         int whatOuterNum = (calcTotal / 20);
         Log.d("Outer Circle Num Haab", Integer.toString((whatOuterNum)));
-        returnObject.innerCircleString = mApp.innterCircles[whatInnerNum];
+        returnObject.innerCircleString = mApp.innerCircles[whatInnerNum];
         returnObject.outerCircleString = mApp.outerCircleHaab[whatOuterNum];
         returnObject.imageReference = mApp.imagesHaab[whatOuterNum];
 

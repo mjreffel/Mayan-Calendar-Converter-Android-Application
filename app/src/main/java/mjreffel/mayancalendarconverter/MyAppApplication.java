@@ -43,7 +43,7 @@ public class MyAppApplication extends Application {
 
 
     //Global arrays so we only have one instance of them and dont waste space
-    public static final String [] innterCircles = new String[] {
+    public static final String [] innerCircles = new String[] {
             "0",
             "1",
             "2",

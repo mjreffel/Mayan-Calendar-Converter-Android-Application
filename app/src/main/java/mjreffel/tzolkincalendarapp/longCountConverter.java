@@ -1,8 +1,6 @@
-package mjreffel.mayancalendarconverter;
+package mjreffel.tzolkincalendarapp;
 
 import android.util.Log;
-
-import java.util.GregorianCalendar;
 
 /**
  * Created by markreffel on 1/17/17.

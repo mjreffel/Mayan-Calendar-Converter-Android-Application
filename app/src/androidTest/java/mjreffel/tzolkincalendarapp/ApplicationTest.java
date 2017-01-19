@@ -1,4 +1,4 @@
-package mjreffel.mayancalendarconverter;
+package mjreffel.tzolkincalendarapp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

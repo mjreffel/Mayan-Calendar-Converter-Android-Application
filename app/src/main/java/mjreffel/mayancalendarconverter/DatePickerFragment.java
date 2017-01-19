@@ -75,7 +75,7 @@ public class DatePickerFragment extends DialogFragment
 
         mApp.haabImage.setBackgroundResource(tempHaab.imageReference);
 
-        mApp.dateButton.setText((1+month) + "/" + day + "/" + year);
+        mApp.dateButton.setText((month) + "/" + day + "/" + year);
 
 
     }

@@ -60,9 +60,9 @@ public class DatePickerFragment extends DialogFragment
         haabConverter.haabObject tempHaab = mApp.globalHaabConverter.onCalculateHaab(year, month, day, mApp);
 
         //Update the fields in the activity to reflect the above calculations
-        mApp.tzolkinText.setText(tempTzolkin.innerCircleString + tempTzolkin.outerCircleString);
+        mApp.tzolkinText.setText(tempTzolkin.innerCircleString + " " + tempTzolkin.outerCircleString);
         mApp.longText.setText(tempLong.baktun + "." + tempLong.katun + "." + tempLong.tun + "." + tempLong.uinal + "." + tempLong.kin);
-        mApp.haabText.setText(tempHaab.innerCircleString + tempHaab.outerCircleString);
+        mApp.haabText.setText(tempHaab.innerCircleString + " " + tempHaab.outerCircleString);
         mApp.tzolkinImage.setBackgroundResource(tempTzolkin.imageReference);
 
         //Setup the long detail section

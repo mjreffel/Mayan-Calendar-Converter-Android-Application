@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Mayan-Calendar-Converter-Android-Application.iml" filepath="$PROJECT_DIR$/Mayan-Calendar-Converter-Android-Application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MayanCalendarConverter.iml" filepath="$PROJECT_DIR$/MayanCalendarConverter.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

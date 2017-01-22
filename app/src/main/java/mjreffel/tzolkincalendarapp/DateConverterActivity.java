@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static android.R.attr.data;
 
 
 public class DateConverterActivity extends AppCompatActivity {
@@ -54,7 +57,10 @@ public class DateConverterActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_credits) {
+            Toast.makeText(getBaseContext(),"Developed by Mark Reffel and Mandip Sangha \n" +
+                    "Designed by Mark Reffel\n" + "All images retrieved from the Internet ",
+                    Toast.LENGTH_LONG).show();
             return true;
         }
 

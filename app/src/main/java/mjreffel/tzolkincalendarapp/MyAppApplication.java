@@ -163,7 +163,10 @@ public class MyAppApplication extends Application {
         DateTime endTime = new DateTime(givenYear, givenMonth, givenDay,0,0);
         Interval differenceTime = new Interval(startTime, endTime);
         long calcTotalMili = differenceTime.toDurationMillis();
-        int calcTotalDays = (int) (calcTotalMili / (1000*60*60*24));
+        //int calcTotalDays = (int) (calcTotalMili / (1000*60*60*24));
+        float tempVal = (1000*60*60*24);
+        float calcTotalDaysWithDec = (float) (calcTotalMili / tempVal);
+        int calcTotalDays = Math.round(calcTotalDaysWithDec);
         return calcTotalDays;
     }
 
